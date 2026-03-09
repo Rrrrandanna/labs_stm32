@@ -1,4 +1,4 @@
-Core/Src/
+Core/Src/*.c
 !Core/Src/platform
 Core/Startup/
 Core/Inc/

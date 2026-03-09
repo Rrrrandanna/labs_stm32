@@ -2,8 +2,8 @@
 
 ### **1. Клонирование репозитория (один раз)**
 ```bash
-git clone <ссылка-на-репозиторий>
-cd <имя-папки>
+git clone https://github.com/element3309/labs_stm32.git
+cd labs_stm32
 ```
 
 ### **2. Создание своей ветки**
@@ -15,12 +15,12 @@ git checkout -b lab1-фамилия/вариант        # например: la
 ### **3. Добавление файлов и коммит**
 ```bash
 git add .                           # добавить все изменения
-git commit -m "Lab1: мигаем светодиодом"
+git commit -m "lab1: на проверку 1"
 ```
 
 ### **4. Отправка ветки на GitHub**
 ```bash
-git push -u origin lab1-фамилия
+git push -u origin <название вашей ветки> # например: lab1-ivanov
 ```
 
 ### **5. Создание Pull Request (PR)**
