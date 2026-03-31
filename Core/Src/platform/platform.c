@@ -1,7 +1,7 @@
 /* Директива препроцессора для подключения заголовочного файла */
 #include "platform.h"
 
-//#include "lab1_gpio/lab1_gpio.h"
+#include "lab1_gpio/lab1_gpio.h"
 //#include "lab2_timer/lab2_timer.h"
 //#include "lab3_stepper/lab3_stepper.h"
 
@@ -17,6 +17,7 @@ int plt_init(void)
 /* Повторяющийся вызов */
 void plt_process(void)
 {
+	plt_gpio_toggle();
 
 	/* Устанавливаем задержку */
 	plt_delay(500);
