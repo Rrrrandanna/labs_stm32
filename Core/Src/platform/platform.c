@@ -13,12 +13,15 @@ int plt_init(void)
 	return 0;
 }
 
-
+uint32_t ini = 0;
 /* Повторяющийся вызов */
 void plt_process(void)
 {
 	HAL_UART_Transmit(&huart1, "hello", 5, HAL_MAX_DELAY);
-
+//	plt_adc_start();
+//	plt_adc_conversion_poll();
+//	ini = plt_adc_get_value();
+//	plt_adc_stop();
 	/* Устанавливаем задержку */
 	plt_delay(500);
 }

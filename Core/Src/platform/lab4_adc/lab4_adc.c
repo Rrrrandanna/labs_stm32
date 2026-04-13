@@ -15,12 +15,8 @@
 extern ADC_HandleTypeDef hadc3;
 
 #include <stdio.h>
-#define tV_25   0.76f      // Напряжение (в вольтах) на датчике при температуре 25 °C.
-#define tSlope  0.0025f    // �?зменение напряжения (в вольтах) при изменении температуры на градус.
+
 #define Vref    3.3f       // Образцовое напряжение АЦП (в вольтах).
-int16_t Result=0;
-float temp;
-char sprintf_buffer[100];
 
 
 void plt_adc_start(void)
@@ -35,7 +31,6 @@ void plt_adc_stop(void)
 
 int plt_adc_conversion_poll(void)
 {
-	/* Запуск TIM6 в режиме прерывания */
 	if(HAL_ADC_PollForConversion(&hadc3, 100) == HAL_OK) return PLT_OK;
 	else return PLT_ERROR;
 }
@@ -43,4 +38,14 @@ int plt_adc_conversion_poll(void)
 uint32_t plt_adc_get_value(void)
 {
 	return HAL_ADC_GetValue(&hadc3);
+}
+
+/* Напишите функцию расчета напряжения на входе АЦП
+ * Функция использует в теле plt_adc_get_value() или
+ * принимает аргументом целое число - результат измерений с АЦП
+ * Функция возвращает напряжение в вольтах*/
+float plt_adc_get_voltage(void)
+{
+    float voltage = 0.00;
+    return voltage;
 }
