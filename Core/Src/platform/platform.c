@@ -3,9 +3,9 @@
 #include "main.h"
 //#include "lab1_gpio/lab1_gpio.h"
 //#include "lab2_timer/lab2_timer.h"
-//#include "lab3_stepper/lab3_stepper.h"
+#include "lab3_stepper/lab3_stepper.h"
 #include "lab4_adc/lab4_adc.h"
-extern UART_HandleTypeDef huart1;
+//extern UART_HandleTypeDef huart1;
 /* Однократный вызов */
 int plt_init(void)
 {
@@ -17,8 +17,10 @@ int plt_init(void)
 /* Повторяющийся вызов */
 void plt_process(void)
 {
+    plt_stepper(1);
+
 	/* Устанавливаем задержку */
-	plt_delay(500);
+	plt_delay(5);
 }
 
 /* Перенести в main.c в user code */
