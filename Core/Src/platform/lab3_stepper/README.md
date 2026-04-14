@@ -8,7 +8,8 @@
 void plt_stepper_full(uint8_t step_n)
 ```
 напишите свою функцию ```void plt_stepper_half(uint8_t half_step_n)``` которая выполняет шаг ШД в полушаговом режиме
-
+![alt text](image.png)
+![alt text](image-1.png)
 ## Задание 2
 
 Доработайте функцию
