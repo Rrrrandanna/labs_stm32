@@ -2,6 +2,12 @@
 
 Этот репозиторий является **основным (upstream)**.
 Вы не должны пушить изменения напрямую в него. Работа ведётся через **fork**.
+После первой установки GIT выполните следующие команды в терминале git bash:
+
+```bash
+git config --global user.email "ваша почта"
+git config --global user.name "ваш ник"
+```
 
 ### 1. Сделайте fork репозитория
 
@@ -72,9 +78,9 @@ git push origin lab1-surname
 Перед началом новой работы обновите локальную копию:
 
 ```bash
-git checkout main
-git pull upstream main
-git push origin main
+git checkout master
+git pull upstream master
+git push origin master
 ```
 
 ---
