@@ -1,4 +1,7 @@
 /* Директива препроцессора для подключения заголовочного файла */
+#include <stdint.h>
+extern volatile uint32_t adc_value;
+extern volatile float adc_voltage;
 #include "platform.h"
 #include "main.h"
 //#include "lab1_gpio/lab1_gpio.h"
@@ -17,6 +20,24 @@ int plt_init(void)
 /* Повторяющийся вызов */
 void plt_process(void)
 {
+	plt_adc_start();
+
+	plt_adc_conversion_poll();
+
+	adc_value = plt_adc_get_value();
+	adc_voltage = plt_adc_get_voltage();
+
+	plt_adc_stop();
+
+	if ((adc_value > 3000) || (adc_voltage > 3.0f))
+	   {
+		   HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_SET);
+	   }
+	   else
+	   {
+		   HAL_GPIO_WritePin(USER_LED_GPIO_Port, USER_LED_Pin, GPIO_PIN_RESET);
+	   }
+
 	/* Устанавливаем задержку */
 	plt_delay(500);
 }
